@@ -7,7 +7,14 @@
         // Define the payload you want to send
         const payload = {
           page: window.location.pathname,
-          timestamp: new Date().toISOString()
+          timestamp: new Date().toISOString(),
+          operatingSystem: window.navigator.platform,
+          referrer: document.referrer,
+          screenheight: window.screen.height,
+          screenwidth: window.screen.width,
+          userAgent: window.navigator.userAgent,
+          viewportHeight: window.innerHeight,
+          viewportWidth: window.innerWidth
         };
   
         // Set the URL to your API endpoint
