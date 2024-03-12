@@ -2,47 +2,16 @@
 <html>
   <head>
     <title>My First Web Page</title>
-    <script>
-      window.onload = function() {
-        // Define the payload you want to send
-        const payload = {
-          page: window.location.pathname,
-          timestamp: new Date().toISOString(),
-          operatingSystem: window.navigator.platform,
-          referrer: document.referrer,
-          screenheight: window.screen.height,
-          screenwidth: window.screen.width,
-          userAgent: window.navigator.userAgent,
-          viewportHeight: window.innerHeight,
-          viewportWidth: window.innerWidth
-        };
-  
-        // Set the URL to your API endpoint
-        const apiURL = 'https://7q2lapb1o3.execute-api.us-east-1.amazonaws.com/page_view_event_handler';
-  
-        // Make a POST request to the API
-        fetch(apiURL, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            // Add any other headers your API requires
-          },
-          body: JSON.stringify(payload)
-        })
-        .then(response => {
-          if (response.ok) {
-            return response.json();  // or response.text() if your API sends back plain text
-          }
-          throw new Error('Network response was not ok.');
-        })
-        .then(data => console.log('Page view tracked successfully:', data))
-        .catch(error => console.error('There was a problem with your fetch operation:', error));
-      };
-    </script>
+    <script src="https://cdn.amplify.aws/aws-amplify-4.3.8.min.js"></script>
   </head>
   <body>
     <h1>Welcome to my first web page!</h1>
     <p>This is a paragraph of text. I can write anything I want here.</p>
-    <p>Here is another paragraph of text. I can write anything I want here, too.</p>
+    <p>
+      Here is another paragraph of text. I can write anything I want here, too.
+    </p>
+    <script>
+      // We will add the Amplify configuration and event tracking code here
+    </script>
   </body>
 </html>
