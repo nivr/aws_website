@@ -2,7 +2,6 @@
 <html>
   <head>
     <title>My First Web Page</title>
-    <script src="https://cdn.amplify.aws/packages/core/4.2.1-geo.20/aws-amplify-core.min.js" integrity="sha384-ZJ0BipyxRjDHPcTLilxOMRf9grNEwTTUOmr8l8MUprgnpAnpK4Fz20ndOQElCtWb" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   </head>
   <body>
     <h1>Welcome to my first web page!</h1>
@@ -10,32 +9,6 @@
     <p>
       Here is another paragraph of text. I can write anything I want here, too.
     </p>
-    <script>
-        const amplifyConfig = {
-          Auth: {
-            identityPoolId: 'us-east-1:7d4691fa-3516-4cc2-a60b-c406e31d0ea3',
-            region: 'us-east-1'
-          }
-        };
-    
-        // Initialize Amplify
-        Amplify.Auth.configure(amplifyConfig);
-    
-        const analyticsConfig = {
-          AWSPinpoint: {
-            appId: '4e66c10351e74fe7901f81a18ade9b89', // Your Pinpoint App ID
-            region: 'us-east-1',
-            mandatorySignIn: false,
-          }
-        };
-    
-        Amplify.Analytics.configure(analyticsConfig);
-    
-        // Record a custom event
-        Amplify.Analytics.record({
-          name: 'Album',
-          attributes: { genre: 'Rock', year: '1989' }
-        });
-      </script>
+    <script src="app.js"></script>
   </body>
 </html>
