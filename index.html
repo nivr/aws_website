@@ -11,7 +11,31 @@
       Here is another paragraph of text. I can write anything I want here, too.
     </p>
     <script>
-      // We will add the Amplify configuration and event tracking code here
-    </script>
+        const amplifyConfig = {
+          Auth: {
+            identityPoolId: 'us-east-1:7d4691fa-3516-4cc2-a60b-c406e31d0ea3',
+            region: 'us-east-1'
+          }
+        };
+    
+        // Initialize Amplify
+        Amplify.Auth.configure(amplifyConfig);
+    
+        const analyticsConfig = {
+          AWSPinpoint: {
+            appId: '4e66c10351e74fe7901f81a18ade9b89', // Your Pinpoint App ID
+            region: 'us-east-1',
+            mandatorySignIn: false,
+          }
+        };
+    
+        Amplify.Analytics.configure(analyticsConfig);
+    
+        // Record a custom event
+        Amplify.Analytics.record({
+          name: 'Album',
+          attributes: { genre: 'Rock', year: '1989' }
+        });
+      </script>
   </body>
 </html>
