@@ -1,0 +1,13 @@
+{
+  "name": "your-project-name",
+  "version": "1.0.0",
+  "description": "A brief description of your project",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "@aws-amplify/analytics": "^4.0.0",
+    "@aws-amplify/auth": "^4.0.0"
+  }
+}
